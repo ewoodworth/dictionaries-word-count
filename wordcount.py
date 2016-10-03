@@ -10,7 +10,13 @@ def word_count(path):
         line = line.rstrip()
         line = line.split(" ")
         for word in line:
-            word_counts[word] = word_counts.get(word, 0) + 1
+            word = word.lower()
+            word = [char for char in word if char.isalpha()]
+            new_word = ""
+            for char in word:
+                new_word += char
+            
+            word_counts[new_word] = word_counts.get(new_word, 0) + 1
 
     input_text.close()
 
@@ -18,8 +24,6 @@ def word_count(path):
         print "%s %s" % (word, count)
 
 word_count("test.txt")
-
-
 
 
 
@@ -38,7 +42,14 @@ def word_count_generated(path):
         line = line.rstrip()
         line = line.split(" ")
         for word in line:
-            word_counts[word] = word_counts.get(word, 0) + 1
+            word = word.lower()
+            word = [char for char in word if char.isalpha()]
+            new_word = ""
+            for char in word:
+                new_word += char
+            
+            word_counts[new_word] = word_counts.get(new_word, 0) + 1
+
 
     input_text.close()
 
